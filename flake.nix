@@ -12,11 +12,16 @@
         pkgs = import nixpkgs { inherit system; };
       in
       {
-        # packages.default = resha;
         devShells.default = with pkgs; mkShell {
-          buildInputs = with python310Packages; [
-            csvkit pandas matplotlib scipy jupytext
-          ];
+          buildInputs = [
+            csvkit
+            nodePackages.wrangler
+          ] ++ (with python310Packages; [
+            pandas
+            matplotlib
+            scipy
+            jupytext
+          ]);
         };
       }
     );
