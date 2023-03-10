@@ -3,6 +3,8 @@ This repo holds Jesper Browall's excellent F1 bet visualiser,
 modified for headless execution to generate plots, and wrappers
 to generate static HTML content from them.
 
+The page is live at [https://f1.hubinette.me](https://f1.hubinette.me)!
+
 ## Dependencies
 Install [Nix](https://nixos.org/download.html), then run `nix develop`
 in the repo root and all dependencies are automatically available.
