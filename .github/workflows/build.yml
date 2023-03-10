@@ -11,6 +11,8 @@ jobs:
       deployments: write
     steps:
       - uses: nixbuild/nix-quick-install-action@v21
+        with:
+          nix_conf: extra-experimental-features = nix-command flakes
       - uses: actions/checkout@v3
       - run: nix develop -c './build.sh'
       - name: Publish
