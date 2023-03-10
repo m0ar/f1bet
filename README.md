@@ -24,6 +24,7 @@ document with reactive gallery style CSS.
 
 ## Deployment
 This is done automatically on push to the master branch.
+
 Do do it manually, run `wrangler publish dist --project=f1bet`
-(requires authentication).
+(requires authentication, so it only works if you are @m0ar).
 
