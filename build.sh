@@ -9,7 +9,7 @@ HEADLESS=true FIG_OUTPUT_DIR=figs python "$NB_SCRIPT" > /dev/null
 rm "$NB_SCRIPT"
 
 mkdir -p dist
-cp style.css dist
+cp src/style.css dist
 
 cat > dist/index.html <<EOF
 <html>
