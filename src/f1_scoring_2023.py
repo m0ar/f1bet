@@ -56,10 +56,11 @@ def f1_parameters(drivers, teams):
     df_constructor_bet  = pd.DataFrame(list(zip(merc_bet, redbull_bet, mclaren_bet, aston_bet, alpine_bet, ferarri_bet, alphatauri_bet,\
         alfaromeo_bet, haas_bet, wiliiams_bet)) ,  index= ['Jesper', 'Jonas', 'Lindskog', 'Mattias', 'Jonas_Far', 'Edvard*'], columns = teams)
 
-
+    excel_loc = os.path.join(os.getcwd().replace('/src', ''), 'f1scores_2023.xlsx')
     ######################## THE SCORING  ########################
 
-    df_driver_points = pd.read_excel(os.path.join(os.getcwd(), 'f1scores_2023.xlsx'), 'Blad1')
+
+    df_driver_points = pd.read_excel(excel_loc, 'Blad1')
     df_driver_points = df_driver_points.transpose()
     new_header = df_driver_points.iloc[0] #grab the first row for the header
     df_driver_points = df_driver_points[1:] #take the data less the header row
@@ -68,7 +69,7 @@ def f1_parameters(drivers, teams):
     
     ######################## THE MODIFICATIONS FOR THOSE WITH SAME SCORE  ########################
     
-    df_driver_mod = pd.read_excel(os.path.join(os.getcwd(), 'f1scores_2023.xlsx'), 'Blad2')
+    df_driver_mod = pd.read_excel(excel_loc, 'Blad2')
     df_driver_mod = df_driver_mod.transpose()
     new_header = df_driver_mod.iloc[0] #grab the first row for the header
     df_driver_mod = df_driver_mod[1:] #take the data less the header row
@@ -77,7 +78,7 @@ def f1_parameters(drivers, teams):
 
 
 
-    df_constr_mod = pd.read_excel(os.path.join(os.getcwd(), 'f1scores_2023.xlsx'), 'Blad3')
+    df_constr_mod = pd.read_excel(excel_loc, 'Blad3')
     df_constr_mod = df_constr_mod.transpose()
     new_header = df_constr_mod.iloc[0] #grab the first row for the header
     df_constr_mod = df_constr_mod[1:] #take the data less the header row
